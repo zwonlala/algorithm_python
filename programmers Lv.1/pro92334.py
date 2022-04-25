@@ -1,5 +1,7 @@
 # 220418  23:44 ~ 
-# 220425 23:08 ~ (준희님 만나고 집 가면서) ~ 23:48 1try
+# 220425 23:08 ~ (준희님 만나고 집 가면서) ~ 23:48 1 try
+#        23:48 ~ 24:01 2 try(solve)
+
 
 def solution(id_list, report, k):
     
@@ -34,6 +36,34 @@ def solution(id_list, report, k):
         print(reportKey, reportValue, reportCnt);
         if (reportCnt >= k):
             for reporter in reportValue:
+                ansDict[reporter] += 1
+    
+    for id in id_list:
+        ansArr.append(ansDict[id]);
+    return ansArr
+
+
+
+#  2nd try
+
+def solution(id_list, report, k):
+    ansArr = [];
+    ansDict = {};
+    reportDict = {};
+    
+    for id in id_list:
+        ansDict[id] = 0;
+        reportDict[id] = [];
+
+    for rItem in report:
+        x, y = rItem.split()
+        reportDict[y].append(x)
+    
+    for reportKey, reportValue in reportDict.items():
+        distintValues = list(set(reportValue));
+        reportCnt = len(distintValues);
+        if (reportCnt >= k):
+            for reporter in distintValues:
                 ansDict[reporter] += 1
     
     for id in id_list:

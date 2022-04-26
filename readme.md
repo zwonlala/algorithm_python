@@ -3,6 +3,17 @@
 
 ## list
 
+### 특정 조건을 만족하는 원소만 가지고 있는 배열 (≈ JS filter())
+
+```python
+a = [1, 2, 3, 4, 5]
+remove_set = {1, 3, 5}
+result = [i for i in a if i not in remove_set]
+```
+
+
+
+
 
 <br>
 <br>

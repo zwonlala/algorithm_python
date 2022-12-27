@@ -30,10 +30,12 @@ def bfs(graph, start, visited):
 t = int(input())
 for _ in range(t):
     n = int(input())
-    points = []
-    for __ in range(n + 2):
-        x, y = map(int, input().split())
-        points.append((x, y))
+    # points = []
+    # for __ in range(n + 2):
+    #     x, y = map(int, input().split())
+    #     points.append((x, y))
+
+    points = [list(map(int, input().split())) for __ in range(n+2)]
 
     graph = [[] for i in range(n + 2)]
     for i in range(n + 2):
